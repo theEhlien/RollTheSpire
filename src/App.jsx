@@ -5,7 +5,7 @@ import './App.css';
 export default function App() {
 
   const [diceRoll, setDiceRoll] = useState('');
-  const [rollName, setRollName] = useState(''); // sanitize this later
+  const [rollName, setRollName] = useState('');
 
   const handleDiceRollChange = event => {
     setDiceRoll(event.target.value);
@@ -20,9 +20,11 @@ export default function App() {
     if(diceRoll === "") {
       return;
     }
-    let finalUrl = "talespire://dice/".concat(rollName).concat(":").concat(encodeURIComponent(diceRoll));
+    let finalUrl = "talespire://dice/".concat(encodeURIComponent(rollName)).concat(":").concat(diceRoll);
+    console.log()
     window.open(finalUrl, "_self");
     setDiceRoll("");
+    setRollName("");
   };
 
   return (
