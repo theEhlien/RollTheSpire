@@ -6,6 +6,7 @@ export default function App() {
 
   const [diceRoll, setDiceRoll] = useState('');
   const [rollName, setRollName] = useState('');
+  const [advDis, setAdvDis] = useState(false);
 
   const handleDiceRollChange = event => {
     setDiceRoll(event.target.value);
@@ -15,16 +16,35 @@ export default function App() {
     setRollName(event.target.value);
   };
 
+  const handleAdvDisChange = event => {
+    setAdvDis(!advDis);
+  };
+
   const handleClick = event => {
     event.preventDefault();
-    if(diceRoll === "") {
-      return;
+    if(diceRoll !== "") {  
+      let finalUrl = "talespire://dice/";
+      let name = rollName;
+
+      if(name !== "") {
+        finalUrl = finalUrl.concat(encodeURIComponent(name));
+        if(advDis) {
+          finalUrl = finalUrl.concat(encodeURIComponent(" ADV/DIS"));
+        }
+        finalUrl = finalUrl.concat(":");
+      }
+
+      if(advDis) {
+        finalUrl = finalUrl.concat(diceRoll).concat("/").concat(diceRoll);
+      } else {
+        finalUrl = finalUrl.concat(diceRoll);
+      }
+      window.open(finalUrl, "_self");
+      // console.log(finalUrl);
     }
-    let finalUrl = "talespire://dice/".concat(encodeURIComponent(rollName)).concat(":").concat(diceRoll);
-    console.log()
-    window.open(finalUrl, "_self");
     setDiceRoll("");
     setRollName("");
+    setAdvDis(false);
   };
 
   return (
@@ -42,18 +62,29 @@ export default function App() {
           autoComplete="off"  
         />
         <h3>Dice Input</h3>
-        <input
-          type="text"
-          id="diceRoll"
-          name="diceRoll"
-          onChange={handleDiceRollChange}
-          value={diceRoll}
-          autoComplete="off"
-        />
+        <div className="diceRow">
+          <input
+            type="text"
+            id="diceRoll"
+            name="diceRoll"
+            onChange={handleDiceRollChange}
+            value={diceRoll}
+            autoComplete="off"
+          />
+          <label className="checkbox">
+            <input 
+              type="checkbox"
+              id="advDis"
+              name="advDis"
+              onChange={handleAdvDisChange}
+              checked={advDis}
+            />
+            ADV/DIS
+          </label>
+        </div>
       </div>
       <br/>
       <button onClick={handleClick}>Roll in TaleSpire</button>
     </div>
   );
-
 }
