@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/EhlienSpire/static/css/main.6cf61409.css",
+    "main.js": "/EhlienSpire/static/js/main.f251b8c5.js",
+    "index.html": "/EhlienSpire/index.html",
+    "main.6cf61409.css.map": "/EhlienSpire/static/css/main.6cf61409.css.map",
+    "main.f251b8c5.js.map": "/EhlienSpire/static/js/main.f251b8c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6cf61409.css",
+    "static/js/main.f251b8c5.js"
+  ]
+}
