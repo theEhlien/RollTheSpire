@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "./static/css/main.6cf61409.css",
-    "main.js": "./static/js/main.f251b8c5.js",
-    "index.html": "./index.html",
-    "main.6cf61409.css.map": "./static/css/main.6cf61409.css.map",
-    "main.f251b8c5.js.map": "./static/js/main.f251b8c5.js.map"
+    "main.css": "/EhlienSpire/static/css/main.6cf61409.css",
+    "main.js": "/EhlienSpire/static/js/main.f251b8c5.js",
+    "index.html": "/EhlienSpire/index.html",
+    "main.6cf61409.css.map": "/EhlienSpire/static/css/main.6cf61409.css.map",
+    "main.f251b8c5.js.map": "/EhlienSpire/static/js/main.f251b8c5.js.map"
   },
   "entrypoints": [
     "static/css/main.6cf61409.css",
