@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
+import {Helmet} from "react-helmet";
 import './App.css';
 
 export default function App() {
@@ -48,43 +49,62 @@ export default function App() {
   };
 
   return (
-    <div className="container">
-      {/* Maybe we can generate something to show number of dice in a nicer way here */}
-      <h2>Current Roll: {diceRoll}</h2>
-      <div className="inputFields">
-        <h3>Roll Name</h3>
-        <input 
-          type="text"
-          id="rollName"
-          name="rollName"
-          onChange={handleRollNameChange}
-          value={rollName}
-          autoComplete="off"  
-        />
-        <h3>Dice Input</h3>
-        <div className="diceRow">
-          <input
-            type="text"
-            id="diceRoll"
-            name="diceRoll"
-            onChange={handleDiceRollChange}
-            value={diceRoll}
-            autoComplete="off"
-          />
-          <label className="checkbox">
-            <input 
-              type="checkbox"
-              id="advDis"
-              name="advDis"
-              onChange={handleAdvDisChange}
-              checked={advDis}
-            />
-            ADV/DIS
-          </label>
+    <>
+      <Helmet>
+        <title>TaleSpire Dice Rolls</title>
+      </Helmet>
+      <div className="container">
+        <div className="navBar">
+          <h1 className="navText">
+            Ehlien Spire Dice Roller
+          </h1>
+        </div>
+        <div className="content">
+          <div className="innerContainer">
+            {/* Maybe we can generate something to show number of dice in a nicer way here */}
+            <h2>Current Roll: {diceRoll}</h2>
+            <div className="inputFields">
+              <h3>Roll Name</h3>
+              <input 
+                type="text"
+                id="rollName"
+                name="rollName"
+                onChange={handleRollNameChange}
+                value={rollName}
+                autoComplete="off"  
+              />
+              <h3>Dice Input</h3>
+              <div className="diceRow">
+                <input
+                  type="text"
+                  id="diceRoll"
+                  name="diceRoll"
+                  onChange={handleDiceRollChange}
+                  value={diceRoll}
+                  autoComplete="off"
+                />
+                <label className="checkbox">
+                  <input 
+                    type="checkbox"
+                    id="advDis"
+                    name="advDis"
+                    onChange={handleAdvDisChange}
+                    checked={advDis}
+                  />
+                  ADV/DIS
+                </label>
+              </div>
+            </div>
+            <br/>
+            <button onClick={handleClick}>Roll in TaleSpire</button>
+          </div>
+        </div>
+        <div className="footer">
+          <p className="navText">
+            No Footer... <a href="https://www.youtube.com/@ehlien_gaming/live">Checkout My YouTube</a>
+          </p>
         </div>
       </div>
-      <br/>
-      <button onClick={handleClick}>Roll in TaleSpire</button>
-    </div>
+    </>
   );
 }

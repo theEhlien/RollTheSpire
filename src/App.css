@@ -1,4 +1,72 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100dvh;
+}
+
 .container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.navBar {
+  flex: 0 1 auto;
+  background-color:rgb(54, 54, 54);
+  font-size: 0.8em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navText {
+  text-align: center;
+  color: rgb(180, 2, 2);
+}
+
+.content {
+  flex: 1 0 auto;
+  color: lightgray;
+  background-color: rgb(31, 31, 31);
+  border: none;
+  overflow: hidden;
+}
+
+.innerContainer {
   color: white;
   text-align: center;
+  padding-bottom: 2em;
+}
+
+.footer {
+  flex: 0 1 20px;
+  background-color:rgb(54, 54, 54);
+  font-size: 1em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.footer .navText {
+  font-size: 1em;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.footer .navText a:link {
+  color: rgb(180, 2, 2);
+}
+
+.footer .navText a:visited {
+  color: rgb(180, 2, 2);
+}
+
+.footer .navText a:hover {
+  color:darkgrey;
+}
+
+.footer .navText a:active {
+  color: white;
 }
