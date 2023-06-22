@@ -51,12 +51,12 @@ export default function App() {
   return (
     <>
       <Helmet>
-        <title>TaleSpire Dice Rolls</title>
+        <title>Roll the Spire</title>
       </Helmet>
       <div className="container">
         <div className="navBar">
           <h1 className="navText">
-            Ehlien Spire Dice Roller
+            Roll the Spire
           </h1>
         </div>
         <div className="content">
